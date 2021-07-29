@@ -81,10 +81,33 @@ nav ul ul li a:hover {
     display: none;
 }
 /* fim do cabeçalho */
-.produtos {
+.banner {
+    margin: 10%;
+    display: flex;
+    width: 90%;
+}
+.banner .welcome {
+    width: 90%;
+}
+.banner h1 {
+    font-size: 50px;
+}
+.banner p {
+    margin: 10px 10px 10px 0px;
+    font-size: 20px;
+}
+.banner img {
+    width: auto;
+    border-radius: 50%;
+    padding-left: 20px;
+    width: auto;
+}
+/* fim do "banner" */
+.first-line {
     display: grid;
     grid-template-areas: "item item item item";
     margin: auto;
+    margin-bottom: 16px;
     max-width: 80%;
 }
 .produtos .item {
@@ -128,6 +151,41 @@ nav ul ul li a:hover {
 }
 .produtos .item a:hover {
     background-color: #444444;
+}
+.produtos .ver-mais {
+    display: block;
+    width: 15%;
+    min-width: 100px;
+    text-align: center;
+    border-radius:24px;
+    padding: 15px;
+    margin: auto;
+    background-color: #fff;
+    color: #111;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 10px 10px 10px -10px #262622;
+}
+.produtos .ver-mais:hover {
+    background-color: #222;
+    color: #fff;
+}
+.mais-itens {
+    margin-top: 24px;
+    margin: auto;
+    margin-top: 16px;
+    max-width: 80%;
+    display: none;
+    grid-template-areas: "item item item item";
+}
+[id^=btn-ver]:checked + .mais-itens {
+    display: grid;
+}
+.produtos .titulo-categoria {
+    display: none;
+    text-align: center;
+    margin-top: 30px;
+    border-bottom: #282b2d solid;
 }
 /* fim dos cards de itens */
 .container-contatos {
@@ -276,7 +334,14 @@ ul {
 /* fim do rodape */
 
 @media(max-width:1080px) {
-    .produtos {
+    .banner p {
+        font-size: 19px;
+    }
+    .banner img {
+        width: auto;
+        height: 125px;
+    }
+    .produtos .item {
         font-size: 70%;
     }
 }
@@ -332,7 +397,7 @@ ul {
         display: block;
     }
     /* fim do cabeçalho mobile */
-    .produtos {
+    .first-line, .mais-itens {
         grid-template-areas: "item item";
         max-width: 95%;
         font-size: 75%;
@@ -357,7 +422,7 @@ ul {
     }
 }
 @media(max-width: 350px) {
-    .produtos {
+    .first-line, .mais-itens {
         grid-template-areas: "item";
         max-width: 95%;
     }
