@@ -110,6 +110,13 @@ nav ul ul li a:hover {
     margin-bottom: 16px;
     max-width: 80%;
 }
+.mais-itens .first-line {
+    display: grid;
+    grid-template-areas: "item item item item";
+    margin: 0 10%;
+    margin-bottom: 16px;
+    max-width: 100%;  
+}
 .produtos .item {
     display: flex;
     flex-direction: column;
@@ -120,6 +127,7 @@ nav ul ul li a:hover {
     border-radius: 10px;
     box-shadow: 10px 10px 10px -10px #262622;
     grid-area: "item";
+    font-size: 100%;
 }
 .produtos .image {
     width: 100%;
@@ -160,6 +168,7 @@ nav ul ul li a:hover {
     border-radius:24px;
     padding: 15px;
     margin: auto;
+    margin-bottom: 24px;
     background-color: #fff;
     color: #111;
     font-weight: 600;
@@ -171,21 +180,25 @@ nav ul ul li a:hover {
     color: #fff;
 }
 .mais-itens {
-    margin-top: 24px;
-    margin: auto;
-    margin-top: 16px;
-    max-width: 80%;
     display: none;
-    grid-template-areas: "item item item item";
-}
-[id^=btn-ver]:checked + .mais-itens {
-    display: grid;
+    max-width: 100%;
+    grid-template-areas:
+    "categoria"
+    "categoria";
 }
 .produtos .titulo-categoria {
-    display: none;
     text-align: center;
     margin-top: 30px;
     border-bottom: #282b2d solid;
+}
+.produtos .mais-itens .titulo-categoria {
+    display: block;
+    text-align: center;
+    margin-top: 30px;
+    border-bottom: #282b2d solid;
+}
+.toggle-show {
+    display: block;
 }
 /* fim dos cards de itens */
 .container-contatos {
@@ -341,9 +354,19 @@ ul {
         width: auto;
         height: 125px;
     }
-    .produtos .item {
-        font-size: 70%;
+    .produtos .first-line{
+        max-width: 100%;
     }
+    .produtos .ver-mais {
+        width: 20%;
+    }
+    .mais-itens .first-line {
+        margin: auto;
+    }                                                                           
+    .produtos .image {
+        max-height: 220px;
+    }
+
 }
 @media(max-width: 767px) {
     nav ul {
@@ -397,10 +420,25 @@ ul {
         display: block;
     }
     /* fim do cabeçalho mobile */
-    .first-line, .mais-itens {
+    .first-line {
         grid-template-areas: "item item";
         max-width: 95%;
-        font-size: 75%;
+        font-size: 100%;
+    }
+    .mais-itens {
+        grid-template-areas: "categoria";
+    }
+    .mais-itens .first-line {
+        grid-template-areas: "item item";
+        max-width: 100%;
+        font-size: 100%;
+        margin: 0;
+    }
+    .produtos .image {
+        max-height: 400px;
+    }
+    .produtos .ver-mais {
+        width: 30%;
     }
     .contatos {
         flex-direction: column;
@@ -426,11 +464,20 @@ ul {
         grid-template-areas: "item";
         max-width: 95%;
     }
+    .mais-itens .first-line {
+        grid-template-areas: "item";
+        max-width: 100%;
+        font-size: 100%;
+        margin: 0;
+    }
     .footer-col {
         width: 100%;
         margin-bottom: 30px;
     }
     nav .logo {
         max-width: 75%;
+    }
+    .produtos .ver-mais {
+        width: 35%;
     }
 }
