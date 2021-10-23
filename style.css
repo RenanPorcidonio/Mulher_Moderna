@@ -84,7 +84,7 @@ nav ul ul li a:hover {
 .banner {
     margin: 10%;
     display: flex;
-    width: 90%;
+    width: 80%;
 }
 .banner .welcome {
     width: 90%;
@@ -98,9 +98,9 @@ nav ul ul li a:hover {
 }
 .banner img {
     width: auto;
+    height: auto;
     border-radius: 50%;
-    padding-left: 20px;
-    width: auto;
+
 }
 /* fim do "banner" */
 .first-line {
@@ -123,6 +123,7 @@ nav ul ul li a:hover {
     align-items: justify;
     background-color: whitesmoke;
     max-width: 400px;
+    min-width: 25%;
     margin: 10px;
     border-radius: 10px;
     box-shadow: 10px 10px 10px -10px #262622;
@@ -133,6 +134,7 @@ nav ul ul li a:hover {
     width: 100%;
     height: 100%;
     max-height: 300px;
+    object-fit: cover;
 }
 .produtos h3 {
     margin: 10px;
@@ -352,7 +354,7 @@ ul {
     }
     .banner img {
         width: auto;
-        height: 125px;
+        height: 150px;
     }
     .produtos .first-line{
         max-width: 100%;
@@ -420,6 +422,24 @@ ul {
         display: block;
     }
     /* fim do cabeçalho mobile */
+
+    .banner {
+        margin: 5%;
+        width: 90%;
+        flex-direction: column-reverse;
+        justify-content: center;
+        align-items: center;
+    }
+    .banner h1 {
+        font-size: 45px;
+    }
+    .banner p {
+        font-size: 17px;
+    }
+    .banner img {
+      display: none;
+    }
+    /* fim do banner mobile */
     .first-line {
         grid-template-areas: "item item";
         max-width: 95%;
