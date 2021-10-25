@@ -20,21 +20,21 @@ const sectionVestidos = document.querySelector(".section-vestidos")
 
 const cardsVestido = [
     {
-        imagem: "/midia/imagens/vestido_branco.jpg",
-        nome: "Blusa gravatinha 100",
-        preco: 54.90,
+        imagem: "https://th.bing.com/th/id/R.d74e9f12b642d6463645b6ade9f2706d?rik=QvYBfkY5hfhStg&riu=http%3a%2f%2fwww.luxoseluxos.com.br%2fwp-content%2fuploads%2f2014%2f06%2fvestido-azul-10.jpg&ehk=rdwjAFpAg%2bMVSuSniQP%2fvrgivspJOIwxbNDX2Y42Dew%3d&risl=&pid=ImgRaw&r=0",
+        nome: "Vestido",
+        preco: 69.90,
         especificacao: "Tecido crepe seda",
         corTamanho: "Cor Azul - Tamanho G"
     },
     {
-        imagem: "/midia/imagens/vestido_branco.jpg",
+        imagem: "/midia/imagens/vestido_branco2.png",
         nome: "Blusa gravatinha 200",
         preco: 54.90,
         especificacao: "Tecido crepe seda",
         corTamanho: "Cor Azul - Tamanho G"
     },
     {
-        imagem: "/midia/imagens/vestido_branco.jpg",
+        imagem: "/midia/imagens/vestido_branco2.png",
         nome: "Blusa gravatinha 300",
         preco: 54.90,
         especificacao: "Tecido crepe seda",
@@ -48,17 +48,14 @@ const cardsVestido = [
         corTamanho: "Cor Rosa - Tamanho G"
     },
 ]
-console.log(cardsVestido)
-
 cardsVestido.map(card => {
     const cardClone = item.cloneNode(true)
     cardClone.querySelector("img").src = card.imagem
     cardClone.querySelector("h3").innerHTML = card.nome
-    cardClone.querySelector(".preco").innerHTML = card.preco
+    cardClone.querySelector(".preco").innerHTML = card.preco.toLocaleString("pt-BR", {style: "currency", currency: "BRL"})
     cardClone.querySelector(".especificacao").innerHTML = card.especificacao
     cardClone.querySelector(".cor-tamanho").innerHTML = card.corTamanho
     sectionVestidos.appendChild(cardClone)
-    console.log(cardClone)
 })
 
 //geração de itens para a section-saias
@@ -95,7 +92,6 @@ const cardsSaias = [
         corTamanho: "Cor Azul - Tamanho G"
     },
 ]
-console.log(cardsSaias)
 
 cardsSaias.map(card => {
     const cardClone = item.cloneNode(true)
@@ -105,7 +101,6 @@ cardsSaias.map(card => {
     cardClone.querySelector(".especificacao").innerHTML = card.especificacao
     cardClone.querySelector(".cor-tamanho").innerHTML = card.corTamanho
     sectionSaias.appendChild(cardClone)
-    console.log(cardClone)
 })
 
 //geração de itens para a section-blusas
@@ -142,7 +137,6 @@ const cardsBlusas = [
         corTamanho: "Cor Azul - Tamanho G"
     },
 ]
-console.log(cardsBlusas)
 
 cardsBlusas.map(card => {
     const cardClone = item.cloneNode(true)
@@ -152,7 +146,6 @@ cardsBlusas.map(card => {
     cardClone.querySelector(".especificacao").innerHTML = card.especificacao
     cardClone.querySelector(".cor-tamanho").innerHTML = card.corTamanho
     sectionBlusas.appendChild(cardClone)
-    console.log(cardClone)
 })
 
 //geração de itens para a section-casacos
@@ -189,7 +182,6 @@ const cardsCasacos = [
         corTamanho: "Cor Azul - Tamanho G"
     },
 ]
-console.log(cardsCasacos)
 
 cardsCasacos.map(card => {
     const cardClone = item.cloneNode(true)
@@ -199,5 +191,4 @@ cardsCasacos.map(card => {
     cardClone.querySelector(".especificacao").innerHTML = card.especificacao
     cardClone.querySelector(".cor-tamanho").innerHTML = card.corTamanho
     sectionCasacos.appendChild(cardClone)
-    console.log(cardClone)
 })
